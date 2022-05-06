@@ -8,19 +8,26 @@ const getRandomImageUrl = () => {
 
 function RandomImage() {
   const [imageValue, setImage] = useState("");
-
+  //const [filter, setFilter] = useState(0);
   const handleRandomPhotoClick = async () => {
     const randomImageUrl = getRandomImageUrl();
     setImage(randomImageUrl);
   };
 
   useEffect(() => {
+    console.log("Random image");
     handleRandomPhotoClick();
   }, []);
 
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setFilter(filter + 1);
+  //   }, 1000);
+  // }, []);
+
   return (
     <Box>
-      <Box style={{marginTop:'10rem'}}>
+      <Box style={{ marginTop: "5rem" }}>
         <Button
           color="primary"
           variant="contained"
@@ -30,7 +37,7 @@ function RandomImage() {
         </Button>
       </Box>
 
-      <Box height={300} style={{marginTop:'2rem'}}>
+      <Box height={300} style={{ marginTop: "2rem" }}>
         {imageValue && (
           <img
             src={imageValue}

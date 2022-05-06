@@ -13,14 +13,12 @@ function App() {
   const handleTodoClick = (todo) => {
     const index = todoList.findIndex((x) => x.id === todo.id);
     if (index < 0) return;
-
     const newTodoList = [...todoList];
     newTodoList.splice(index, 1);
     setTodoList(newTodoList);
   };
 
   const handleTodoFormSubmit = (formValues) => {
-    // add new todo to current todo list
     const newTodo = {
       id: todoList.length + 1,
       ...formValues,

@@ -1,8 +1,6 @@
 import "./App.css";
 import RandomImage from "./components/RandomImage";
 import { useState } from "react";
-import TodoList from "./components/TodoList";
-import TodoForm from "./components/TodoForm";
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -30,8 +28,6 @@ function App() {
   return (
     <div className="App">
       <RandomImage />
-      <TodoForm onSubmit={handleTodoFormSubmit} />
-      <TodoList todos={todoList} onTodoClick={handleTodoClick} />
     </div>
   );
 }

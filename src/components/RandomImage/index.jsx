@@ -8,22 +8,15 @@ const getRandomImageUrl = () => {
 
 function RandomImage() {
   const [imageValue, setImage] = useState("");
-  //const [filter, setFilter] = useState(0);
+  
   const handleRandomPhotoClick = async () => {
     const randomImageUrl = getRandomImageUrl();
     setImage(randomImageUrl);
   };
 
   useEffect(() => {
-    console.log("Random image");
     handleRandomPhotoClick();
   }, []);
-
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     setFilter(filter + 1);
-  //   }, 1000);
-  // }, []);
 
   return (
     <Box>
